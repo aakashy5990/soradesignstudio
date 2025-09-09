@@ -1,0 +1,26 @@
+
+/* ************cursor ********** */
+.cursor-dot {
+  width: 4px;
+  height: 4px;
+  background-color: white;
+}
+
+.cursor-outline {
+  width: 22px;
+  height: 22px;
+  /* border: 2px solid hsla(0, 0%, 100%, .5); */
+  border: 2px solid gray;
+  backdrop-filter: blur(2px);
+}
+
+.cursor-dot,
+.cursor-outline {
+  position: fixed;
+  top: 0;
+  left: 0;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  z-index: 99999999999;
+  pointer-events: none;
+}

@@ -1,0 +1,13 @@
+User-agent: *
+Allow: /
+
+# Block common noise
+Disallow: /node_modules/
+Disallow: /src/
+Disallow: /dist/
+
+# Sitemap location
+Sitemap: https://soradesignstudio.com/sitemap.xml
+Sitemap: https://soradesignstudio.com/portfolio-sitemap.xml
+
+

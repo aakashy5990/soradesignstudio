@@ -1,0 +1,174 @@
+.headerPort img{
+  width: 80px;
+  border-radius: 50%;
+}
+
+.headerPort{
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.headerPort .nav_head_port p{
+  font-family: 'Clash Display', sans-serif;
+  font-weight: var(--font-weight-regular);
+  text-transform: uppercase;
+}
+
+.nav_port ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+}
+
+.headerPort .nav_head_port p{
+  font-size: 18px;
+  color: #000;
+}
+
+.nav_port ul li a {
+  text-transform: uppercase;
+  font-family: 'Clash Display', sans-serif;
+  font-weight: var(--font-weight-regular);
+  text-transform: uppercase;
+}
+
+
+li a, .dropbtn {
+  display: inline-block;
+  text-align: center;
+  text-decoration: none;
+  color: #000;
+}
+
+li.dropdownport {
+  display: inline-block;
+  z-index: 2;
+  position: relative;
+}
+
+.dropdown-content-port {
+  display: none;
+  position: absolute;
+  background-color: #000;
+  min-width: 160px;
+  transform: translate(-50%, -50%);
+  font-size: 15px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+  top: 268%;
+  left: 50%;
+}
+
+.dropdown-content-port a {
+  color: #fff;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: center;
+  font-size: 15px;
+}
+
+.dropdown-content-port a:hover {
+  background-color: rgb(54, 54, 54);
+}
+
+
+/* main css  */
+
+
+.intro-port h2 {
+  font-size: 35px;
+  margin-top: 20px;
+  font-family: 'Clash Display', sans-serif;
+  text-align: center;
+  font-weight: var(--font-weight-medium);
+  
+}
+
+.intro-port p {
+  text-align: center;
+  font-size: 18px;
+  margin-top: 5px;
+  font-family: 'Clash Display', sans-serif;
+  font-weight: var(--font-weight-normal);
+}
+
+.vision-block .handwritten {
+  font-style: italic;
+  font-size: 20px;
+  margin-left: 10px;
+}
+
+blockquote {
+  font-size: 22px;
+  margin: 20px auto;
+  border-radius: 10px;
+  max-width: 800px;
+  word-spacing: 5px;
+  background: #000;
+  color: #fff;
+  padding: 15px 8px;
+  font-family: 'Clash Display', sans-serif;
+  font-weight: var(--font-weight-medium);
+  text-align: center;
+}
+
+/* media query  */
+
+@media screen and (max-width: 800px) {
+  nav ul li a,
+  .headerPort .nav_head_port p{
+    font-size: 15px;
+    font-weight: var(--font-weight-medium);
+  }
+
+  .dropdown-content-port {
+    min-width: 120px;
+  }
+  .dropdown-content-port a {
+    padding: 10px 14px;
+    font-size: 13px;
+  }
+}
+
+
+@media screen and (max-width: 501px) {
+  .headerPort img {
+    transform: translateX(-20px);
+  }
+
+  nav ul li a,
+  .headerPort .nav_head_port p{
+    font-size: 13px;
+    font-weight: var(--font-weight-medium);
+
+  }
+
+  .intro-port h2 {
+    font-size: 25px;
+  }
+
+  .intro-port p {
+    font-size: 15px;
+  }
+
+  blockquote {
+    font-size: 18px;
+  }
+}
+
+@media screen and (max-width: 400px) {
+
+  .headerPort img {
+    width: 60px;
+    transform: translateX(-25px);
+  }
+  nav ul li a,
+  .headerPort .nav_head_port p{
+    font-size: 13px;
+    font-weight: var(--font-weight-medium);
+
+  }
+}

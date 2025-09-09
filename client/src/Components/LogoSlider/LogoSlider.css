@@ -1,0 +1,67 @@
+@keyframes slide {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+.logos {
+  z-index: 1;
+  position: relative;
+  overflow: hidden;
+  padding: 10px 0;
+  background: var(--text-w-color);
+  white-space: nowrap;
+  width: 100%;
+}
+
+.logos-slide {
+  display: inline-block;
+  animation: 30s slide infinite linear;
+  white-space: nowrap;
+}
+
+.logos-slide img {
+  height: 80px;
+  margin: 0 1rem;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+
+
+/* media query css  */
+@media screen and (max-width: 700px){
+
+
+  /* logo slider section  */
+  .logos-slide img {
+      margin: 0 0px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+
+  /* logo slider section  */
+  .logos-slide img {
+      height: 130px;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  
+  /* logo slider section  */
+  .logos-slide img {
+    height: 90px;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  /* logo slider section  */
+  .logos-slide img {
+      height: 80px;
+  }
+}

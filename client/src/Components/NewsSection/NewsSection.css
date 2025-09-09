@@ -1,0 +1,82 @@
+.get_intro_section {
+  position: relative;
+  min-height: 100vh;
+  overflow: hidden;
+}
+
+.get_hero_video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+}
+
+.get_hero_intro_content {
+  height: 100vh;
+  width: 100%;
+}
+
+.get_hero_intro_text_content {
+  width: 100%;
+  height: 100%;
+  flex-direction: column;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  row-gap: 3rem;
+  margin: 0 auto;
+  max-width: 750px;
+}
+
+.get_hero_intro_text_content p:first-child {
+  font-size: 5rem;
+  font-family: 'Clash Display', sans-serif;
+  font-weight: var(--font-weight-bold);
+  color: var(--text-w-color);
+}
+
+.get_hero_intro_text_content p {
+  color: var(--text-w-color);
+  font-size: 1rem;
+  word-spacing: 2px;
+  text-align: center;
+  letter-spacing: 2px;
+  font-family: 'Clash Display', sans-serif;
+  font-weight: var(--font-weight-normal);
+}
+
+.get_lets_btn {
+  text-decoration: none;
+  color: var(--text-w-color);
+  border: 3px solid var(--text-w-color);
+  padding: 1rem 4rem;
+  text-transform: uppercase;
+  transition: all 0.3s ease;
+  position: relative;
+  font-size: 1.2rem;
+  font-family: 'Clash Display', sans-serif;
+  transition: transform 0.3s ease-in-out;
+}
+
+.get_lets_btn:hover {
+  transform: scale(1.1);
+}
+
+/* Responsive for mobile */
+@media screen and (max-width: 600px) {
+  .get_hero_intro_text_content p:first-child {
+    font-size: 3rem;
+  }
+
+  .get_lets_btn {
+    padding: 0.8rem 2rem;
+    font-size: 0.9rem;
+  }
+
+  .get_hero_video {
+    object-position: center top;
+  }
+}

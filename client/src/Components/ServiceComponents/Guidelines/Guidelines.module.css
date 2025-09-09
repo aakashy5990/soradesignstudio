@@ -1,0 +1,11 @@
+.intro_section{
+  min-height: 100vh;
+  background: url('../../../assets/service_banner/brandguidelines.png') no-repeat;
+  background-size: cover;
+  background-position: 72%;
+  position: fixed;
+  width: 100%;
+  position: relative;
+  overflow-y: hidden;
+  z-index: 3;
+}
