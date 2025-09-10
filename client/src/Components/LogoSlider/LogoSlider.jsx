@@ -2,6 +2,10 @@ import React, { useState, useEffect } from "react";
 import "./LogoSlider.css";
 import { assetsLogo } from "../../assets/assetsLogo";
 import { useAppContext } from "../../context/AppContext";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Autoplay, FreeMode } from "swiper/modules";
+import "swiper/css";
+import "swiper/css/free-mode";
 
 function LogoSlider() {
   const { axios } = useAppContext();
@@ -64,35 +68,40 @@ function LogoSlider() {
 
   return (
     <div className="logos">
-      <div className="logos-slide">
-        {displayLogos.map((logo, index) => (
-          <img 
-            key={index} 
-            src={typeof logo === 'string' ? logo : logo.image} 
-            alt={`Logo ${index + 1}`}
-            onError={(e) => {
-              // If image fails to load, try to use fallback
-              if (typeof logo !== 'string') {
-                e.target.src = fallbackLogos[index % fallbackLogos.length];
-              }
-            }}
-          />
-        ))}
-      </div>
-      <div className="logos-slide">
-        {displayLogos.map((logo, index) => (
-          <img 
-            key={`duplicate-${index}`} 
-            src={typeof logo === 'string' ? logo : logo.image} 
-            alt={`Logo ${index + 1}`}
-            onError={(e) => {
-              // If image fails to load, try to use fallback
-              if (typeof logo !== 'string') {
-                e.target.src = fallbackLogos[index % fallbackLogos.length];
-              }
-            }}
-          />
-        ))}
+      <div className="logo-track">
+        <div className="logo-track-inner">
+          {displayLogos.map((logo, index) => (
+            <div key={index} className="logo-item">
+              <div className="logo-container">
+                <img 
+                  src={typeof logo === 'string' ? logo : logo.image} 
+                  alt={`Client Logo ${index + 1}`}
+                  loading="lazy"
+                  onError={(e) => {
+                    const fallbackIndex = index % fallbackLogos.length;
+                    e.target.src = fallbackLogos[fallbackIndex];
+                  }}
+                />
+              </div>
+            </div>
+          ))}
+          {/* Duplicate for seamless loop */}
+          {displayLogos.map((logo, index) => (
+            <div key={`duplicate-${index}`} className="logo-item">
+              <div className="logo-container">
+                <img 
+                  src={typeof logo === 'string' ? logo : logo.image} 
+                  alt={`Client Logo ${index + 1}`}
+                  loading="lazy"
+                  onError={(e) => {
+                    const fallbackIndex = index % fallbackLogos.length;
+                    e.target.src = fallbackLogos[fallbackIndex];
+                  }}
+                />
+              </div>
+            </div>
+          ))}
+        </div>
       </div>
     </div>
   );

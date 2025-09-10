@@ -1,67 +1,213 @@
-@keyframes slide {
-  from {
+@keyframes constantScroll {
+  0% {
     transform: translateX(0);
   }
-
-  to {
-    transform: translateX(-100%);
+  100% {
+    transform: translateX(-50%);
   }
 }
 
 .logos {
   z-index: 1;
   position: relative;
-  overflow: hidden;
-  padding: 10px 0;
+  padding: 20px 0;
   background: var(--text-w-color);
-  white-space: nowrap;
   width: 100%;
+  overflow: hidden;
+  will-change: transform;
 }
 
-.logos-slide {
-  display: inline-block;
-  animation: 30s slide infinite linear;
-  white-space: nowrap;
+.logo-track {
+  width: 100%;
+  overflow: hidden;
+  will-change: transform;
 }
 
-.logos-slide img {
-  height: 80px;
-  margin: 0 1rem;
-  display: inline-block;
-  vertical-align: middle;
+.logo-track-inner {
+  display: flex;
+  align-items: center;
+  animation: constantScroll 30s linear infinite;
+  will-change: transform;
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  width: fit-content;
+}
+
+.logo-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  will-change: transform;
+  transform: translateZ(0);
+  backface-visibility: hidden;
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 30px;
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  will-change: transform;
+  transform: translateZ(0);
+  backface-visibility: hidden;
+}
+
+.logo-container:hover {
+  transform: scale(1.05) translateZ(0);
+}
+
+.logo-container img {
+  height: 60px;
+  width: auto;
+  max-width: 120px;
+  object-fit: contain;
+  filter: grayscale(100%) opacity(0.7);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  will-change: transform, filter;
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: crisp-edges;
+}
+
+.logo-container:hover img {
+  filter: grayscale(0%) opacity(1);
+  transform: scale(1.1) translateZ(0);
 }
 
 
 
-/* media query css  */
-@media screen and (max-width: 700px){
-
-
-  /* logo slider section  */
-  .logos-slide img {
-      margin: 0 0px;
+/* Responsive Design */
+@media screen and (max-width: 1024px) {
+  .logo-container {
+    padding: 10px 25px;
   }
-}
-
-@media screen and (max-width: 600px) {
-
-  /* logo slider section  */
-  .logos-slide img {
-      height: 130px;
-  }
-}
-
-@media screen and (max-width: 500px) {
   
-  /* logo slider section  */
-  .logos-slide img {
-    height: 90px;
+  .logo-container img {
+    height: 55px;
+    max-width: 110px;
   }
 }
 
-@media screen and (max-width: 400px) {
-  /* logo slider section  */
-  .logos-slide img {
-      height: 80px;
+@media screen and (max-width: 768px) {
+  .logos {
+    padding: 15px 0;
   }
+  
+  .logo-container {
+    padding: 8px 20px;
+  }
+  
+  .logo-container img {
+    height: 50px;
+    max-width: 100px;
+  }
+}
+
+@media screen and (max-width: 640px) {
+  .logo-container {
+    padding: 8px 15px;
+  }
+  
+  .logo-container img {
+    height: 45px;
+    max-width: 90px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .logos {
+    padding: 10px 0;
+  }
+  
+  .logo-container {
+    padding: 5px 10px;
+  }
+  
+  .logo-container img {
+    height: 40px;
+    max-width: 80px;
+  }
+}
+
+/* Accessibility */
+@media (prefers-reduced-motion: reduce) {
+  .logo-track-inner {
+    animation: none;
+  }
+  
+  .logo-container {
+    transition: none;
+  }
+  
+  .logo-container img {
+    transition: none;
+  }
+  
+  .logo-container:hover {
+    transform: none;
+  }
+  
+  .logo-container:hover img {
+    transform: none;
+  }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  .logo-container img {
+    filter: grayscale(0%) opacity(1);
+  }
+}
+
+/* Performance optimizations for ultra-smooth animation */
+.logo-swiper {
+  -webkit-transform: translateZ(0);
+  -moz-transform: translateZ(0);
+  -ms-transform: translateZ(0);
+  -o-transform: translateZ(0);
+  transform: translateZ(0);
+  -webkit-backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+  -ms-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -webkit-perspective: 1000px;
+  -moz-perspective: 1000px;
+  -ms-perspective: 1000px;
+  perspective: 1000px;
+}
+
+.logo-swiper .swiper-wrapper {
+  -webkit-transform: translateZ(0);
+  -moz-transform: translateZ(0);
+  -ms-transform: translateZ(0);
+  -o-transform: translateZ(0);
+  transform: translateZ(0);
+  -webkit-backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+  -ms-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+/* GPU acceleration for all animated elements */
+.logo-slide,
+.logo-container,
+.logo-container img {
+  -webkit-transform: translateZ(0);
+  -moz-transform: translateZ(0);
+  -ms-transform: translateZ(0);
+  -o-transform: translateZ(0);
+  transform: translateZ(0);
+  -webkit-backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+  -ms-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+/* Smooth scrolling optimization */
+.logos {
+  -webkit-overflow-scrolling: touch;
+  scroll-behavior: smooth;
 }

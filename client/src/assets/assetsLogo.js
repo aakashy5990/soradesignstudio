@@ -10,7 +10,7 @@ import risingDiamond from "./logos_slider/Rising_diamond.png";
 import titan from "./logos_slider/titan.png";
 import weefsel from "./logos_slider/weefsel.png";
 import chevrolet from "./logos_slider/chevrolet.png";
-import tironlogo from "./logos_slider/tiron.png";
+import tironlogo from "./logos_slider/Tiron.png";
 import nikkawhisky from "./logos_slider/nikka.png";
 import upvcconnect from "./logos_slider/connect.png";
 import lumiere from "./logos_slider/lumiere.png";

@@ -66,17 +66,28 @@ import Client from "./Admin/Client.jsx";
 
 function App() {
   const location = useLocation();
-  const { token, Toaster } = useAppContext();
+  const { token } = useAppContext();
 
   useEffect(() => {
     window.scrollTo({ top: 0, left: 0, behavior: "instant" });
   }, [location.pathname]);
 
+  // Debug: identify any undefined components causing invalid element type
+  console.log({
+    Navbar, CustomCursor, WhatsApp, ParticleBackground,
+    Home, ServiceLayout, PhotoManupulation, ProductVisualization, WebDesign, Guidelines, Animation, SocialMedia,
+    Valkyrie, Cybersoul, Shadows, LastEcho, OceanWhisper, WinterGuardians,
+    Boat, NikkaWhisky, Perfume, WhiskyModel, Omnitrix, Window, Jewelry, AppleWatch, UVLC,
+    AlaknandaGuidelines, CreatorzVisionGuidelines, GreenDotGuidelines, PaceGuidelines, RisingDiamondGuidelines, RisingGemGuidelines, ThunderGuidelines, WindowSpaceGuidelines,
+    PortfolioLayout, Portfolio,
+    Admin, Login, DashBoard, AddLogo, Client
+  });
+
 
   return (
     <>
       <CustomCursor></CustomCursor>
-      <Toaster/>
+      {/* Toaster is already rendered inside AppProvider */}
       {/* <ParticleBackground></ParticleBackground> */}
       <Routes>
         {/* Admin Routes */}
