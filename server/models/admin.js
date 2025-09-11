@@ -4,6 +4,12 @@ const logosliderSchema = new mongoose.Schema({
     image:{
         type:String,
         required:true
+    },
+    imageKitFileId:{
+        type:String,
+    },
+    imageKitFilePath:{
+        type:String,
     }
 },{timestamps:true});
 

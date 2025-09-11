@@ -5,6 +5,12 @@ const clientSchema = new mongoose.Schema({
         type:String,
         required:true
     },
+    imageKitFileId:{
+        type:String,
+    },
+    imageKitFilePath:{
+        type:String,
+    },
     name:{
         type:String,
         required:true

@@ -63,6 +63,8 @@ import DashBoard from './Admin/DashBoard.jsx';
 import { useAppContext } from "../context/AppContext.jsx";
 import AddLogo from "./Admin/AddLogo.jsx";
 import Client from "./Admin/Client.jsx";
+import UpdateClient from "./Admin/UpdateClient.jsx";
+import UpdateLogo from "./Admin/UpdateLogo.jsx";
 
 function App() {
   const location = useLocation();
@@ -95,6 +97,8 @@ function App() {
           <Route index element={<DashBoard />} />
           <Route path='addlogo' element={<AddLogo />} />
           <Route path='clients' element={<Client />} />
+          <Route path='updateclient/:id' element={<UpdateClient />} />
+          <Route path='updatelogo/:id' element={<UpdateLogo />} />
         </Route>
         
         {/* Home Route */}

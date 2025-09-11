@@ -59,8 +59,11 @@ export const addLogoImg = async (req, res) => {
         })
 
         const image = optimizationImageUrl;
-
-        await LogoImgSlider.create({image})
+        await LogoImgSlider.create({
+            image,
+            imageKitFileId: response.fileId,
+            imageKitFilePath: response.filePath,
+        })
 
         res.json({success: true, message: 'Image added Successfully'})
 
@@ -103,6 +106,8 @@ export const client = async (req, res) => {
         // Map to schema fields
         const created = await clientmodel.create({
             profileimg: image,
+            imageKitFileId: response.fileId,
+            imageKitFilePath: response.filePath,
             name: clientName,
             title: clientSryTitle,
             primarytitle: clientPryTitle
@@ -140,10 +145,193 @@ export const getClients = async (req, res) => {
     }
 }
 
+export const getClientById = async (req, res) => {
+    try{
+        const { id } = req.params;
+        const clientDoc = await clientmodel.findById(id);
+        if(!clientDoc){
+            return res.status(404).json({ success: false, message: 'Client not found' });
+        }
+        res.status(200).json({ success: true, client: clientDoc });
+    }catch(error){
+        res.status(500).json({success: false, message: error.message});
+    }
+}
+
 export const getLogos = async (req, res) => {
     try{
         const logos = await LogoImgSlider.find({});
         res.status(200).json({success: true, logos});
+    }catch(error){
+        res.status(500).json({success: false, message: error.message});
+    }
+}
+
+export const getLogoById = async (req, res) => {
+    try{
+        const { id } = req.params;
+        const logoDoc = await LogoImgSlider.findById(id);
+        if(!logoDoc){
+            return res.status(404).json({ success: false, message: 'Logo not found' });
+        }
+        res.status(200).json({ success: true, logo: logoDoc });
+    }catch(error){
+        res.status(500).json({success: false, message: error.message});
+    }
+}
+
+export const deleteLogo = async (req, res) => {
+    try{
+        const { id } = req.body;
+        if(!id){
+            return res.status(400).json({ success: false, message: 'Logo id is required' });
+        }
+        const existing = await LogoImgSlider.findById(id);
+        if(!existing){
+            return res.status(404).json({ success: false, message: 'Logo not found' });
+        }
+
+        if (existing.imageKitFileId) {
+            try {
+                await imagekit.deleteFile(existing.imageKitFileId);
+            } catch (ikErr) {
+                console.error('ImageKit logo delete failed:', ikErr?.message || ikErr);
+            }
+        }
+
+        await LogoImgSlider.findByIdAndDelete(id);
+        res.status(200).json({ success: true, message: 'Logo deleted successfully' });
+    }catch(error){
+        res.status(500).json({success: false, message: error.message});
+    }
+}
+
+export const deleteClient = async (req, res) => {
+    try{
+        const { id } = req.body;
+        if(!id){
+            return res.status(400).json({ success: false, message: 'Client id is required' });
+        }
+
+        const existing = await clientmodel.findById(id);
+        if(!existing){
+            return res.status(404).json({ success: false, message: 'Client not found' });
+        }
+
+        // Attempt to delete image from ImageKit if we have fileId
+        if (existing.imageKitFileId) {
+            try {
+                await imagekit.deleteFile(existing.imageKitFileId);
+            } catch (ikErr) {
+                // Continue even if remote delete fails, but report
+                console.error('ImageKit delete failed:', ikErr?.message || ikErr);
+            }
+        }
+
+        await clientmodel.findByIdAndDelete(id);
+        res.status(200).json({success: true, message: 'Client deleted successfully'})
+    }catch(error){
+        res.status(500).json({success: false, message: error.message});
+    }
+}
+
+export const clientUpdate = async (req, res) => {
+    try{
+        const { id, clientName, clientPryTitle, clientSryTitle } = req.body;
+        if(!id){
+            return res.status(400).json({ success: false, message: 'Client id is required' });
+        }
+        const existing = await clientmodel.findById(id);
+        if(!existing){
+            return res.status(404).json({ success: false, message: 'Client not found' });
+        }
+
+        // Update text fields if provided
+        if (typeof clientName === 'string' && clientName.length) existing.name = clientName;
+        if (typeof clientPryTitle === 'string' && clientPryTitle.length) existing.primarytitle = clientPryTitle;
+        if (typeof clientSryTitle === 'string' && clientSryTitle.length) existing.title = clientSryTitle;
+
+        // If a new image is uploaded, replace in ImageKit
+        const imageFile = req.file;
+        if (imageFile) {
+            try {
+                if (existing.imageKitFileId) {
+                    try { await imagekit.deleteFile(existing.imageKitFileId); } catch {}
+                }
+                const fileBuffer = fs.readFileSync(imageFile.path);
+                const uploadResponse = await imagekit.upload({
+                    file: fileBuffer,
+                    fileName: imageFile.originalname,
+                    folder: '/client'
+                });
+                const optimizationImageUrl = imagekit.url({
+                    path: uploadResponse.filePath,
+                    transformation: [
+                        {quality: 'auto'},
+                        {format: 'webp'},
+                        {width: '1280'},
+                    ]
+                });
+                existing.profileimg = optimizationImageUrl;
+                existing.imageKitFileId = uploadResponse.fileId;
+                existing.imageKitFilePath = uploadResponse.filePath;
+            } catch (imgErr) {
+                return res.status(500).json({ success: false, message: imgErr.message || 'Image update failed' });
+            }
+        }
+
+        await existing.save();
+        res.status(200).json({success: true, message: 'Client updated successfully', client: existing})
+        
+    }catch(error){
+        res.status(500).json({success: false, message: error.message});
+    }
+}
+
+export const logoUpdate = async (req, res) => {
+    try{
+        const { id } = req.body;
+        if(!id){
+            return res.status(400).json({ success: false, message: 'Logo id is required' });
+        }
+        const existing = await LogoImgSlider.findById(id);
+        if(!existing){
+            return res.status(404).json({ success: false, message: 'Logo not found' });
+        }
+
+        const imageFile = req.file;
+        if (!imageFile) {
+            return res.status(400).json({ success: false, message: 'No image file provided' });
+        }
+
+        // Replace existing file in ImageKit
+        try {
+            if (existing.imageKitFileId) {
+                try { await imagekit.deleteFile(existing.imageKitFileId); } catch {}
+            }
+            const fileBuffer = fs.readFileSync(imageFile.path);
+            const uploadResponse = await imagekit.upload({
+                file: fileBuffer,
+                fileName: imageFile.originalname,
+                folder: '/LogoImg'
+            });
+            const optimizationImageUrl = imagekit.url({
+                path: uploadResponse.filePath,
+                transformation: [
+                    {quality: 'auto'},
+                    {format: 'webp'},
+                    {width: '1280'},
+                ]
+            });
+            existing.image = optimizationImageUrl;
+            existing.imageKitFileId = uploadResponse.fileId;
+            existing.imageKitFilePath = uploadResponse.filePath;
+        } catch (imgErr) {
+            return res.status(500).json({ success: false, message: imgErr.message || 'Logo image update failed' });
+        }
+
+        await existing.save();
+        res.status(200).json({success: true, message: 'Logo updated successfully', logo: existing})
     }catch(error){
         res.status(500).json({success: false, message: error.message});
     }

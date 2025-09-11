@@ -60,7 +60,7 @@ function LogoSlider() {
     return (
       <div className="logos">
         <div style={{ textAlign: 'center', padding: '2rem' }}>
-          <p>Loading logos...</p>
+          <div className="w-8 h-8 rounded-full border-2 border-t-white animate-spin"></div>
         </div>
       </div>
     );
