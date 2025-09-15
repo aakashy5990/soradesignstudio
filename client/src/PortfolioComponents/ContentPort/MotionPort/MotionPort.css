@@ -1,0 +1,124 @@
+/* Youtube data fatch section css  */
+.ytsection_components {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  row-gap: 20px;
+  padding: 2rem 20px;
+  background: #000;
+  column-gap: 50px;
+}
+
+.ytbox {
+  /* max-width: 275px; */
+  background-position: center;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+}
+
+.yttitle {
+  background-color: #000000;
+  padding: 0.5rem;
+  transition: all 1s ease;
+}
+
+.yttitle p{
+  color: #ffffff;
+  font-weight: 400;
+  letter-spacing: 1px;
+  text-align: left;
+  font-size: .8rem;
+  font-family: 'Clash Display';
+
+}
+
+.ytbox iframe {
+  vertical-align: middle;
+  margin: 0;
+  padding: 0;
+  flex: 1;
+  transition: all 1s ease;
+}
+
+.ytbox img {
+  vertical-align: middle;
+  /* max-width: 275px; */
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  transition: all 1s ease;
+  border-radius: 8px;
+  filter: none !important;
+  mix-blend-mode: normal !important;
+  background-color: transparent !important;
+
+}
+
+
+@media (max-width: 1200px) {
+  .ytsection_components {
+    grid-template-columns: repeat(3, 1fr); /* 3 columns on medium screens */
+  }
+}
+
+@media (max-width: 768px) {
+  .ytsection_components {
+    grid-template-columns: repeat(2, 1fr); /* 2 columns on smaller screens */
+  }
+
+  .yttitle {
+    font-size: 12px; /* Smaller font size on mobile */
+  }
+}
+
+@media (max-width: 480px) {
+  .ytsection_components {
+    grid-template-columns: 1fr; /* Single column on very small screens */
+  }
+
+  .yttitle {
+    font-size: 12px; /* Adjust font size for mobile */
+    padding: 3px; /* Reduce padding on mobile */
+  }
+}
+
+
+@media screen and (max-width: 900px) {
+  .popup-box {
+    padding: 10px !important;
+    width: 60% !important;
+  }
+}
+@media screen and (max-width: 900px) {
+  .popup-box {
+    width: 85% !important;
+  }
+  
+  .close-btn{
+    margin: 5rem 2rem 0 0;
+    right: 0;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .popup-box {
+    height: 30% !important;
+  }
+}
+
+
+.tab-content {
+  display: none;
+  text-align: center;
+  margin: 1rem 0;
+
+}
+
+.tab-content.activeport {
+  display: block;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  row-gap: 10px;
+}

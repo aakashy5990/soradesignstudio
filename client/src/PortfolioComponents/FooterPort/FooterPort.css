@@ -1,0 +1,139 @@
+
+/* footer section start  */
+.footer_port{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  row-gap:2rem;
+  background-color: rgb(239, 239, 239);
+}
+
+.footer_nav_item_port{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  column-gap: 2rem;
+}
+
+.footer_nav_item_port li{
+  list-style: none;
+}
+
+.footer_nav_item_port li a{
+  text-transform: uppercase;
+}
+
+.footer_nav_item_port li a,
+.footer_myweb_port a{
+  text-decoration: none;
+  font-family: 'Clash Display', sans-serif;
+  font-weight: var(--font-weight-medium);
+}
+.footer_nav_item_port li a:hover{
+  color: blue;
+}
+
+.footer_contact_port p{
+  font-size: 1.7rem;
+  font-family: 'Clash Display', sans-serif;
+  font-weight: var(--font-weight-light);
+  text-align: center;
+}
+
+
+
+.footer_myweb_port a,
+.footer_nav_item_port li a{
+  font-size: 1.7rem;
+  font-family: 'Clash Display', sans-serif;
+  font-weight: var(--font-weight-medium);
+}
+
+.weblink:hover{
+  color: blue;
+}
+
+.footer_logo_port img{
+  width: 150px;
+  border-radius: 50%;
+}
+
+.footer_port{
+  padding: 2rem 0;
+}
+
+.yt_icon_button{
+  color: #fff;
+}
+
+/* footer media  */
+@media screen and (max-width: 800px) {
+  .footer_myweb_port a, .footer_nav_item_port li a {
+    font-size: 1.4rem;
+  }
+  .footer_contact_port p {
+    font-size: 1.3rem;
+  }
+  .footer_logo_port img {
+    width: 100px;
+  }
+  .dropdown-content {
+    min-width: 120px;
+  }
+  .dropdown-content a {
+    padding: 10px 14px;
+    font-size: 13px;
+  }
+}
+
+@media screen and (max-width: 501px) {
+  /* footer media  */
+
+  .footer_nav_item_port{
+    column-gap: 1rem;
+  }
+  .footer_myweb_port a, .footer_nav_item_port li a {
+    font-size: 1.1rem;
+  }
+
+  .footer_contact_port p {
+    font-size: 1.1rem;
+  }
+
+  .footer_logo_port img {
+    width: 90px;
+  }
+
+  .dropdown-content {
+    min-width: 110px;
+  }
+
+  .dropdown-content a {
+    padding: 10px 14px;
+    font-size: 10px;
+    font-weight: var(--font-weight-light);
+  }
+}
+
+@media screen and (max-width: 400px) {
+
+  /* footer media  */
+  .footer_myweb_port a, .footer_nav_item_port li a {
+    font-size: 1rem;
+  }
+
+  .footer_contact_port p {
+    font-size: 1rem;
+  }
+
+  .footer_logo_port img {
+    width: 80px;
+  }
+
+  .footer_nav_item_port{
+    flex-wrap: wrap;
+  }
+  
+}

@@ -1,0 +1,52 @@
+.animation_hover_card {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-55%);
+  margin: 0 auto;
+  background: rgba(255, 255, 255, 0.0125);
+  /* border: 0.1vmin solid rgba(219, 219, 219, 0.1); */
+  border-radius: 10px;
+  overflow: hidden;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  transition: opacity 0.4s ease, transform 0.4s ease;
+  max-width: 350px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.show-card {
+  opacity: 1;
+  transform: translate(-50%, -50%);
+}
+
+.animation_hover_btn_parents{
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 20px;
+}
+
+.animation_hover_btn_parents a{
+  text-align: center;
+  background: var(--text-w-color);
+  color: var(--text-b-color);
+  padding: 10px 10px;
+  border-radius: 10px;
+}
+
+.animation_hover_btn{
+  font-family: 'Clash Display', sans-serif;
+  font-weight: var(--font-weight-regular);
+  color: var(--text-w-color);
+  word-spacing: 3px;
+  font-size: 1rem;
+}
+
+.animation_hover_btn:hover {
+  background: rgb(92, 128, 226);
+  box-shadow: 0 0 0.5vmin #fff;
+}

@@ -1,0 +1,162 @@
+.about_container{
+  width: 100%;
+  background-color: #111111;
+  position: relative;
+  overflow: hidden;
+  padding: 64px 100px;
+}
+
+.about_container::before {
+  content: '';
+  position: absolute;
+  background: radial-gradient(rgb(146 0 255), transparent, transparent);
+  width: 2200px;
+  height: 2200px;
+  opacity: .2;
+  backdrop-filter: blur(10px);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -30%);
+}
+
+.about_img_container{
+  max-width: 600px;
+  width: 100%;
+  min-width: 0;
+}
+
+.about_head{
+  position: relative;
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem 0;
+}
+
+.main_about_head_container p{
+  font-size: 4rem;
+  color: rgb(36 33 38);
+  font-weight: var(--font-weight-bold);
+  font-family: 'Clash Display', sans-serif;
+}
+
+.who_im{
+  color: rgb(0 191 253);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-family: 'Clash Display', sans-serif;
+
+}
+
+.about_main_container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  column-gap: 4rem;
+}
+
+.about_img_container img{
+  width: 100%;
+  vertical-align: middle;
+}
+
+.about_content_container{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  row-gap: 2rem;
+}
+
+.about_content_container p:nth-child(1){
+  color: var(--text-w-color);
+  font-weight: var(--font-weight-medium);
+  font-size: 1.5rem;
+  font-family: 'Clash Display', sans-serif;
+}
+
+span.about_span_bold{
+  color: var(--text-w-color);
+  font-weight: var(--font-weight-medium);
+}
+
+.about_content_container p:nth-child(2){
+  word-spacing: 2px;
+  color: var(--text-light);
+  font-size: 1rem;
+  font-family: 'Clash Display', sans-serif;
+}
+
+.about_content_container p:nth-child(3){
+  color: var(--text-light);
+  font-size: 1rem;
+  font-family: 'Clash Display', sans-serif;
+}
+
+.about_btn_container{
+  margin-top: 1rem;
+}
+
+/* Responsive */
+@media screen and (max-width: 900px) {
+  .about_container {
+    padding: 48px 40px;
+  }
+  .about_main_container {
+    column-gap: 2rem;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .about_container {
+    padding: 32px 20px;
+  }
+  .about_main_container {
+    flex-direction: column;
+    row-gap: 2rem;
+  }
+  .main_about_head_container p{
+    font-size: 2.2rem;
+  }
+  .about_content_container p:nth-child(1){
+    font-size: 1.25rem;
+  }
+}
+
+.btn_container{
+  display: flex;
+  align-items: center;
+  column-gap: 1rem;
+  position: relative;
+  z-index: 1;
+}
+
+.dawnload_cv_btn{
+  color: var(--text-b-color);
+  padding: 10px 20px;
+  background-color: var(--text-w-color);
+  border: 2px solid var(--text-w-color);
+  transition: transform 0.3s ease-in-out 0.1s, background-color 0.3s ease-in-out 0.1s;
+  font-family: 'Clash Display', sans-serif;
+}
+
+.dawnload_cv_btn:hover{
+  color: var(--text-w-color);
+  border: 2px solid var(--text-w-color);
+  background: transparent;
+}
+
+.hire_me_btn{
+  color: var(--text-w-color);
+  border: 2px solid var(--text-w-color);
+  padding: 10px 20px;
+  transition: transform 0.3s ease-in-out 0.1s, background-color 0.3s ease-in-out 0.1s;
+  font-family: 'Clash Display', sans-serif;
+
+}
+
+.hire_me_btn:hover{
+  color: var(--text-b-color);
+  background-color: var(--text-w-color);
+}

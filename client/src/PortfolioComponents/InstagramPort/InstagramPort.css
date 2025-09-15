@@ -1,0 +1,10 @@
+/* Hover effect for float buttons */
+.float:hover {
+  transform: scale(1.1);
+}
+
+/* Specific styles for Instagram button */
+.instagram {
+  background: radial-gradient(circle at 33% 100%, #fed373 4%, #f15245 30%, #d92e7f 62%, #9b36b7 85%, #515ecf);
+  bottom: 2rem;
+}

@@ -1,0 +1,247 @@
+.intro_section {
+  position: relative;
+  min-height: 100vh;
+  overflow: hidden;
+}
+
+.hero-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+}
+
+/* Dark overlay */
+.video-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh; /* Match video height */
+  background-color: rgba(0, 0, 0, 0.3); /* Dark overlay */
+  z-index: 1;
+  pointer-events: none;
+}
+
+.hero_intro_text_content p:nth-child(3){
+  font-weight: var(--font-weight-medium);
+}
+
+.intro_btn_button {
+  font-size: 1.4em;
+  padding: 0.6em 0.8em;
+  border: none;
+  background-color: var(--text-b-color);
+  color: var(--text-w-color);
+  font-family: 'Clash Display', sans-serif;
+  font-weight: var(--font-weight-medium);
+  text-transform: uppercase;
+  cursor: pointer;
+  box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.7);
+  z-index: 1;
+  width: 100%;
+}
+
+.intro_btn_container {
+  position: relative;
+  padding: 3px;
+  background: linear-gradient(90deg, #03a9f4, #f441a5);
+  transition: all 0.4s ease;
+  /* display: inline-block; */
+  /* overflow: hidden; */
+  z-index: 0;
+}
+
+.intro_btn_container::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -1;
+  filter: blur(0);
+  background: inherit;
+  transition: filter 0.4s ease;
+}
+
+.intro_btn_container:hover::before {
+  filter: blur(1.2em);
+  backdrop-filter: blur(1.2rem);
+}
+
+.intro_btn_container:active::before {
+  filter: blur(0.2em);
+}
+
+/* *************** End intro section button ************* */
+
+.hero_intro_content {
+  /* padding-left: var(--padding-left-main); */
+  height: 100vh;
+  width: 100%;
+  position: relative;
+  z-index: 2;
+}
+
+
+.hero_intro_text_content {
+  width: 100%;
+  height: 100%;
+  flex-direction: column;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  row-gap: 3rem;
+  margin: 0 auto;
+  max-width: 750px;
+}
+
+.lets_btn{
+  text-decoration: none;
+  color: var(--text-w-color);
+  border: 4px solid var(--text-w-color);
+  padding: 1rem 4rem;
+  text-transform: uppercase;
+}
+
+.hero_intro_text_content p {
+  color: var(--text-w-color);
+  font-size: 1rem;
+  word-spacing: 2px;
+  text-align: center;
+  letter-spacing: 2px;
+  font-family: 'Clash Display', sans-serif;
+  font-weight: var(--font-weight-normal);
+  /* Extralight */
+}
+
+.hero_intro_text_content p span {
+  text-transform: uppercase;
+  font-family: 'Clash Display', sans-serif;
+  font-weight: var(--font-weight-bold);
+
+}
+
+.hero_intro_text_button {
+  max-width: 375px;
+}
+
+/* media query css  */
+@media screen and (max-width: 800px) {
+  .intro_content {
+      padding-left: var(--padding-left-medium);
+  }
+
+  .intro_text_content p {
+      font-size: 2.5rem;
+      word-spacing: 1px;
+      letter-spacing: 2px;
+  }
+}
+@media screen and (max-width: 600px) {
+
+  .intro_content {
+      padding-left: var(--padding-left-normal);
+  }
+
+  .intro_text_content p {
+    font-size: 2.5rem;
+  }
+  
+  .hero-video {
+    object-position: center top;
+  }
+
+}
+
+@media screen and (max-width: 500px) {
+  .intro_pro_client_content {
+      align-items: start;
+      flex-direction: column;
+  }
+
+  .intro_pro-content_main,.intro_client_content_main{
+      width: 85%;
+  }
+
+  .intro_text_content p {
+      font-size: 2.2rem;
+  }
+
+  .intro_text_content p span {
+      font-weight: var(--font-weight-semibold);
+  }
+
+  .proj_success, .proj_count, .trust_client, .client_count {
+      text-align: start;
+      font-size: 1.5rem;
+  }
+}
+
+@media screen and (max-width: 500px) {
+
+  .intro_content {
+      padding-left: var(--padding-left-small);
+  }
+
+  .intro_btn_button {
+      font-size: 1.2em;
+      padding: 0.4em 0.6em;
+  }
+
+  .intro_text_button {
+      max-width: 270px;
+  }
+}
+
+@media screen and (max-width: 450px) {
+
+  .intro_pro-content_main,.intro_client_content_main{
+      width: 80%;
+  }
+}
+
+@media screen and (max-width: 450px) {
+
+  .intro_text_content p {
+      font-size: 2rem;
+  }
+  
+  .proj_success, .proj_count, .trust_client, .client_count {
+      font-size: 1.1rem;
+      word-spacing: 2px;
+  }
+
+  .intro_text_button {
+      max-width: 210px;
+  }
+  
+  .intro_btn_button {
+      font-size: 1.1em;
+      padding: 0.3em 0.3em;
+  }
+  .intro_content {
+    padding-left: var(--padding-left-little-small);
+  }
+}
+
+@media screen and (max-width: 400px) {
+
+  .intro_text_content p {
+      font-size: 1.6rem;
+  }
+  
+  .proj_success, .proj_count, .trust_client, .client_count {
+    font-size: 1.1rem;
+    word-spacing: 2px;
+  }
+
+  .intro_btn_button {
+    font-size: 1.1em;
+    padding: 0.3em 0.3em;
+  }
+}

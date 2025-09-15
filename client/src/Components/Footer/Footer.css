@@ -1,0 +1,53 @@
+.inner_footer{
+  width: 100%;
+}
+
+.inner_footer_child{
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items:center;
+  padding: 1.3rem 1rem;
+  font-family: 'Clash Display', sans-serif;
+  font-weight: var(--font-weight-normal);
+}
+
+.inner_footer_child p{
+	font-size: .9rem;
+}
+
+/* media query css  */
+@media screen and (max-width: 800px) {
+
+  /* inner footer  */
+  .inner_footer_child{
+      padding: 1rem .7rem;
+  }
+}
+
+@media screen and (max-width: 700px){
+  /* inner footer  */
+  .inner_footer_child p{
+      font-size: .9rem;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  /* inner footer  */
+  .inner_footer_child p{
+      font-size: .8rem;
+  }
+}
+
+@media screen and (max-width: 500px) {
+
+  /* inner footer  */
+  .inner_footer_child{
+      padding: .8rem .2rem;
+  }
+
+  /* inner footer  */
+  .inner_footer_child p{
+      font-size: .6rem;
+  }
+}

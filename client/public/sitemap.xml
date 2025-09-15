@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://soradesignstudio.com/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://soradesignstudio.com/portfolio</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://soradesignstudio.com/photomanupulation</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url><loc>https://soradesignstudio.com/photomanupulation/valkyrie</loc></url>
+  <url><loc>https://soradesignstudio.com/photomanupulation/cybersoul</loc></url>
+  <url><loc>https://soradesignstudio.com/photomanupulation/shadows</loc></url>
+  <url><loc>https://soradesignstudio.com/photomanupulation/lastecho</loc></url>
+  <url><loc>https://soradesignstudio.com/photomanupulation/oceanwhisper</loc></url>
+  <url><loc>https://soradesignstudio.com/photomanupulation/guardians</loc></url>
+
+  <url>
+    <loc>https://soradesignstudio.com/productvisualization</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url><loc>https://soradesignstudio.com/productvisualization/boat</loc></url>
+  <url><loc>https://soradesignstudio.com/productvisualization/nikkawhisky</loc></url>
+  <url><loc>https://soradesignstudio.com/productvisualization/whiskymodel</loc></url>
+  <url><loc>https://soradesignstudio.com/productvisualization/perfume</loc></url>
+  <url><loc>https://soradesignstudio.com/productvisualization/omnitrix</loc></url>
+  <url><loc>https://soradesignstudio.com/productvisualization/window</loc></url>
+  <url><loc>https://soradesignstudio.com/productvisualization/jewelry</loc></url>
+  <url><loc>https://soradesignstudio.com/productvisualization/applewatch</loc></url>
+  <url><loc>https://soradesignstudio.com/productvisualization/upvclangle</loc></url>
+
+  <url>
+    <loc>https://soradesignstudio.com/WebDesign</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://soradesignstudio.com/guidelines</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url><loc>https://soradesignstudio.com/guidelines/creatorzvision</loc></url>
+  <url><loc>https://soradesignstudio.com/guidelines/alaknanda</loc></url>
+  <url><loc>https://soradesignstudio.com/guidelines/greendot</loc></url>
+  <url><loc>https://soradesignstudio.com/guidelines/paceguidelines</loc></url>
+  <url><loc>https://soradesignstudio.com/guidelines/risingdiamond</loc></url>
+  <url><loc>https://soradesignstudio.com/guidelines/risinggem</loc></url>
+  <url><loc>https://soradesignstudio.com/guidelines/thunder</loc></url>
+  <url><loc>https://soradesignstudio.com/guidelines/windowspace</loc></url>
+
+  <url>
+    <loc>https://soradesignstudio.com/animation</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://soradesignstudio.com/socialmedia</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url><loc>https://soradesignstudio.com/socialmedia/autism</loc></url>
+  <url><loc>https://soradesignstudio.com/socialmedia/bees</loc></url>
+  <url><loc>https://soradesignstudio.com/socialmedia/cgi</loc></url>
+  <url><loc>https://soradesignstudio.com/socialmedia/creative</loc></url>
+  <url><loc>https://soradesignstudio.com/socialmedia/informative</loc></url>
+  <url><loc>https://soradesignstudio.com/socialmedia/specialday</loc></url>
+</urlset>
+
