@@ -15,10 +15,10 @@ const Admin = () => {
     const localToken = localStorage.getItem('token');
     
     if (!token && !localToken) {
-      navigate('/admin');
-    } else {
-      setIsLoading(false);
+      navigate('/admin/login');
+      return;
     }
+    setIsLoading(false);
   }, [token, navigate]);
 
   const logout = () => {

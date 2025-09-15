@@ -16,7 +16,7 @@ function LogoSlider() {
   const fetchLogos = async () => {
     try {
       setLoading(true);
-      const { data } = await axios.get('/admin/public/logos');
+      const { data } = await axios.get('/admin/logos');
       if (data.success && data.logos.length > 0) {
         setLogos(data.logos);
       } else {
