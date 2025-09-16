@@ -1,9 +1,8 @@
 import { useEffect, useState } from "react";
 
 function useYoutube() {
-  const API_KEY = "AIzaSyDI3jbAxalxiCopR2ioG8hrpjLRgE6CGoE";
-  const PLAYLIST_ID = "PLdjq6crnM99TKe976L1X65fW4djUEuxCI"; // Example playlist
-  // const PLAYLIST_ID = "PLgUwDviBIf0rF1w2Koyh78zafB0cz7tea"; // Example playlist
+  const API_KEY = import.meta.env.VITE_API_KEY;
+  const PLAYLIST_ID = import.meta.env.VITE_PLAYLIST_ID;
   const maxRes = 50;
   const [ytvideos, ytsetVideos] = useState([]);
   const [loading, setLoading] = useState(true);

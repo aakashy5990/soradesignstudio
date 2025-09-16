@@ -43,12 +43,13 @@ function LogoSlider() {
       </div>
     );
   }
-
+  
   if (logos.length === 0) {
     return (
       <div className="logos">
         <div style={{ textAlign: 'center', padding: '2rem' }}>
-          <p>There are no logos present at the moment.</p>
+          <div className="w-8 h-8 rounded-full border-2 border-t-white animate-spin"></div>
+          {/* <p>There are no logos present at the moment.</p> */}
         </div>
       </div>
     );

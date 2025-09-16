@@ -4,8 +4,8 @@ import toast, { Toaster } from 'react-hot-toast';
 import { useNavigate } from 'react-router-dom';
 
 // Configure axios with proper base URL and credentials
-const baseURL = import.meta.env.VITE_BASE_URL || 'https://soradesignstudio-1.onrender.com';
-// const baseURL = 'http://localhost:4000'
+// const baseURL = import.meta.env.VITE_BASE_URL
+const baseURL = 'http://localhost:4000'
 axios.defaults.baseURL = baseURL;
 // We use JWT from localStorage, not cookies → avoid CORS credential issues on Hostinger
 axios.defaults.withCredentials = false;
