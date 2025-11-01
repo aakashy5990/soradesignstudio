@@ -55,7 +55,7 @@ function MotionPort({ activeBox }) {
                     className="ytimg"
                     onClick={() => setPlayingVideoId(videoId)}
                   >
-                    <img src={video.thumbnail} alt={video.title} />
+                    <img src={video.thumbnail} alt={video.title} loading="lazy" />
                   </div>
                 )}
                 <div className="yttitle">

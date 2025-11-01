@@ -1,28 +1,7 @@
 import React from "react";
-
-import eure01 from "../../../assets/PortfolioImg/brochure/eure-01.webp";
-import eure02 from "../../../assets/PortfolioImg/brochure/eure-02.webp";
-import eure03 from "../../../assets/PortfolioImg/brochure/eure-03.webp";
-import eure04 from "../../../assets/PortfolioImg/brochure/eure-04.webp";
-import eure05 from "../../../assets/PortfolioImg/brochure/eure-05.webp";
-import upvc01 from "../../../assets/PortfolioImg/brochure/upvcwindowsbrochuredesign-01.webp";
-import upvc02 from "../../../assets/PortfolioImg/brochure/upvcwindowsbrochuredesign-02.webp";
-import upvc03 from "../../../assets/PortfolioImg/brochure/upvcwindowsbrochuredesign-03.webp";
-import upvc04 from "../../../assets/PortfolioImg/brochure/upvcwindowsbrochuredesign-04.webp";
+import { BrochurePortData } from "../../../assets/assets-portfolio";
 
 function BrochurePort({ activeBox }) {
-  const brochureData = [
-    { src: eure01, alt: "eure-01" },
-    { src: eure02, alt: "eure-02" },
-    { src: eure03, alt: "eure-03" },
-    { src: eure04, alt: "eure-04" },
-    { src: eure05, alt: "eure-05" },
-    { src: upvc01, alt: "upvcwindowsbrochuredesign-01" },
-    { src: upvc02, alt: "upvcwindowsbrochuredesign-02" },
-    { src: upvc03, alt: "upvcwindowsbrochuredesign-03" },
-    { src: upvc04, alt: "upvcwindowsbrochuredesign-04" },
-  ];
-
   return (
     <div
       id="Brochure"
@@ -46,8 +25,8 @@ function BrochurePort({ activeBox }) {
         </div>
       </div>
       <main>
-        {brochureData.map((item, index) => (
-          <img key={index} src={item.src} alt={item.alt} />
+        {BrochurePortData.map((item, index) => (
+          <img key={index} src={item} loading="lazy" />
         ))}
       </main>
     </div>
