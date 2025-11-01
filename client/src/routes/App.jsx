@@ -75,15 +75,15 @@ function App() {
   }, [location.pathname]);
 
   // Debug: identify any undefined components causing invalid element type
-  console.log({
-    Navbar, CustomCursor, WhatsApp, ParticleBackground,
-    Home, ServiceLayout, PhotoManupulation, ProductVisualization, WebDesign, Guidelines, Animation, SocialMedia,
-    Valkyrie, Cybersoul, Shadows, LastEcho, OceanWhisper, WinterGuardians,
-    Boat, NikkaWhisky, Perfume, WhiskyModel, Omnitrix, Window, Jewelry, AppleWatch, UVLC,
-    AlaknandaGuidelines, CreatorzVisionGuidelines, GreenDotGuidelines, PaceGuidelines, RisingDiamondGuidelines, RisingGemGuidelines, ThunderGuidelines, WindowSpaceGuidelines,
-    PortfolioLayout, Portfolio,
-    Admin, Login, DashBoard, AddLogo, Client
-  });
+  // console.log({
+  //   Navbar, CustomCursor, WhatsApp, ParticleBackground,
+  //   Home, ServiceLayout, PhotoManupulation, ProductVisualization, WebDesign, Guidelines, Animation, SocialMedia,
+  //   Valkyrie, Cybersoul, Shadows, LastEcho, OceanWhisper, WinterGuardians,
+  //   Boat, NikkaWhisky, Perfume, WhiskyModel, Omnitrix, Window, Jewelry, AppleWatch, UVLC,
+  //   AlaknandaGuidelines, CreatorzVisionGuidelines, GreenDotGuidelines, PaceGuidelines, RisingDiamondGuidelines, RisingGemGuidelines, ThunderGuidelines, WindowSpaceGuidelines,
+  //   PortfolioLayout, Portfolio,
+  //   Admin, Login, DashBoard, AddLogo, Client
+  // });
 
 
   return (

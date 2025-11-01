@@ -52,8 +52,9 @@ import carwebsite from "./service/webdesign/img/carwebsite.webp"
 import edusity from "./service/webdesign/img/edusity.webp"
 import estate from "./service/webdesign/img/estate.webp"
 import maxima from "./service/webdesign/img/maxima.webp"
-import rocket from "./service/webdesign/img/rocket.webp"
 import sora from "./service/webdesign/img/sora.webp"
+import quickblog from "./service/webdesign/img/quickblog.png"
+import quickstay from "./service/webdesign/img/quickstay.png"
 
 
 // photomanupulation object
@@ -305,13 +306,13 @@ export const WebDesignData = [
     link: "https://estate-website-psi-puce.vercel.app/", 
   },
   {
-    img: maxima,
-    title: "Lex Maxima",
-    link: "https://lexmexima-five.vercel.app/",
+    img: quickstay,
+    title: "Hotel Booking Website",
+    link: "https://hotel-booking-app-mern-kappa.vercel.app/",
   },
   {
-    img: rocket,
-    title: "Rocket",
-    link: "https://jms-internship-rth2.vercel.app/", 
+    img: quickblog,
+    title: "Blog website",
+    link: "https://ai-blog-mern.vercel.app/ ", 
   },
 ];

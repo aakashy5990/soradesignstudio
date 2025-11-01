@@ -12,15 +12,71 @@ function LogoSlider() {
   const [logos, setLogos] = useState([]);
   const [loading, setLoading] = useState(true);
 
+  const logosdata = [
+      {
+        image: assetsLogo.ascendia,
+      },
+      {
+        image: assetsLogo.creed,
+      },
+      {
+        image: assetsLogo.eumax,
+      },
+      {
+        image: assetsLogo.gregreid,
+      },
+      {
+        image: assetsLogo.kalco,
+      },
+      {
+        image: assetsLogo.maisonjodh,
+      },
+      {
+        image: assetsLogo.marvel,
+      },
+      {
+        image: assetsLogo.mondelez,
+      },
+      {
+        image: assetsLogo.risingDiamond,
+      },
+      {
+        image: assetsLogo.titan,
+      },
+      {
+        image: assetsLogo.weefsel,
+      },
+      {
+        image: assetsLogo.chevrolet,
+      },
+      {
+        image: assetsLogo.tironlogo,
+      },
+      {
+        image: assetsLogo.nikkawhisky,
+      },
+      {
+        image: assetsLogo.upvcconnect,
+      },
+      {
+        image: assetsLogo.lumiere,
+      },
+  ]
+
 
   const fetchLogos = async () => {
     try {
       setLoading(true);
-      const { data } = await axios.get('/admin/logos');
-      if (data.success && data.logos.length > 0) {
-        setLogos(data.logos);
-      } else {
-        setLogos([]);
+      // if condition adding beacuse free backend hosting is slow so i decided to add this condition to avoid the delay in the loading of the page.
+      if(logosdata && logosdata.length > 0){
+        setLogos(logosdata);
+      }else{
+        const { data } = await axios.get('/admin/logos');
+        if (data.success && data.logos.length > 0) {
+          setLogos(data.logos);
+        } else {
+          setLogos([]);
+        }
       }
     } catch (error) {
       console.error('Error fetching logos:', error);
@@ -47,7 +103,7 @@ function LogoSlider() {
   if (logos.length === 0) {
     return (
       <div className="logos">
-        <div style={{ textAlign: 'center', padding: '2rem' }}>
+        <div className="text-center p-8 flex justify-center">
           <div className="w-8 h-8 rounded-full border-2 border-t-white animate-spin"></div>
           {/* <p>There are no logos present at the moment.</p> */}
         </div>

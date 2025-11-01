@@ -5,7 +5,8 @@ import { useNavigate } from 'react-router-dom';
 
 // Configure axios with proper base URL and credentials
 // const baseURL = import.meta.env.VITE_BASE_URL
-const baseURL = 'http://localhost:4000'
+// const baseURL = 'http://localhost:4000'
+const baseURL = window.location.origin === 'https://soradesignstudio.com' ? import.meta.env.VITE_BASE_URL : import.meta.env.VITE_LOC_BASE_URL
 axios.defaults.baseURL = baseURL;
 // We use JWT from localStorage, not cookies → avoid CORS credential issues on Hostinger
 axios.defaults.withCredentials = false;
