@@ -3,7 +3,7 @@ export function YoutubeIcon() {
     <div className="footer_youtube_icon">
       <section className="flex justify-center items-center">
         <a
-          href="https://www.youtube.com/@creatorzvision"
+          href="https://www.youtube.com/@soradesignstudio"
           target="_blank"
           rel="noopener noreferrer"
           className="yt_icon_button"
