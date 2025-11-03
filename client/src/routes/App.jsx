@@ -65,6 +65,7 @@ import AddLogo from "./Admin/AddLogo.jsx";
 import Client from "./Admin/Client.jsx";
 import UpdateClient from "./Admin/UpdateClient.jsx";
 import UpdateLogo from "./Admin/UpdateLogo.jsx";
+import Performance from "./Admin/Performance.jsx";
 
 function App() {
   const location = useLocation();
@@ -100,6 +101,7 @@ function App() {
           <Route path='clients' element={<Client />} />
           <Route path='updateclient/:id' element={<UpdateClient />} />
           <Route path='updatelogo/:id' element={<UpdateLogo />} />
+          <Route path='performance' element={<Performance />} />
         </Route>
         
         {/* Home Route */}

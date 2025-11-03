@@ -19,6 +19,23 @@ const SideBar = () => {
       <p className='hidden md:inline-block'>Client Reviews</p>
     </NavLink>
 
+    <NavLink
+      to='/admin/performance'
+      className={({isActive}) =>
+        `flex items-center gap-3 py-3.5 px-3 md:px-9 md:min-w-64 cursor-pointer ${
+          isActive && "bg-primary/10 border-r-4 border-primary"
+        }`
+      }
+    >
+      <img
+        src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke-width='1.5' stroke='currentColor'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' d='M12 3a9 9 0 019 9 9 9 0 01-9 9 9 9 0 01-9-9 9 9 0 019-9zm0 0v9l3 3' /%3E%3C/svg%3E"
+        alt="Performance"
+        className='min-w-4 w-5'
+      />
+      <p className='hidden md:inline-block'>Performance</p>
+    </NavLink>
+
+
     {/* <NavLink to='/admin/comments' className={({isActive}) => `flex items-center gap-3 py-3.5 px-3 md:px-9 md:min-w-64 cursor-pointer ${isActive && "bg-primary/10 border-r-4 border-primary"}`}>
       <img src="" alt="" className='min-w-4 w-5' />
       <p className='hidden md:inline-block'>Comments</p>
