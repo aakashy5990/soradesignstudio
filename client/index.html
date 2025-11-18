@@ -7,24 +7,40 @@
   <meta name="theme-color" content="#000000" />
   <meta name="description" content="soradesignstudio: Creative studio for branding, CGI, animation, social media, and web design." />
   <meta property="og:site_name" content="soradesignstudio" />
+  <meta name="robots" content="index, follow">
+
+  <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="soradesignstudio" />
   <meta name="twitter:description" content="Creative studio for branding, CGI, animation, social media, and web design." />
   <meta name="twitter:image" content="https://soradesignstudio.com/android-chrome-512x512.png" />
-  <link rel="icon" href="/favicon.ico" type="image/x-icon">
-  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-  <link rel="manifest" href="/site.webmanifest">
+
+  <!-- Favicon (Vite requires relative paths) -->
+  <link rel="icon" href="./favicon.ico" />
+  <link rel="apple-touch-icon" sizes="180x180" href="./apple-touch-icon.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="./favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="./favicon-16x16.png" />
+  <link rel="manifest" href="./site.webmanifest" />
+
+  <!-- Google Site Verification -->
   <meta name="google-site-verification" content="uW0AT9pY0CPxg9-7AjO0uuSu3wwEqYM2FDVKgvnBmcI" />
-  <title>soradesignstudio</title>
-  <!-- Open Graph Meta Tags -->
+
+  <!-- Open Graph -->
   <meta property="og:title" content="soradesignstudio" />
   <meta property="og:description"
     content="Sora Design Studio: Your one-stop destination for innovative ideas and creative solutions. Explore our services and transform your vision into reality." />
   <meta property="og:url" content="https://soradesignstudio.com/" />
   <meta property="og:type" content="website" />
   <meta property="og:image" content="https://soradesignstudio.com/android-chrome-512x512.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt"
+    content="A banner showing the creative services and innovative solutions by Sora Design Studio" />
+
+  <!-- Pinterest Verification -->
+  <meta name="p:domain_verify" content="01f2e411bac7cde6bb1ca0b16c1c2a65" />
+
+  <!-- JSON-LD Schema -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -34,6 +50,7 @@
     "logo": "https://soradesignstudio.com/android-chrome-512x512.png"
   }
   </script>
+
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -43,19 +60,16 @@
   }
   </script>
 
-  <meta property="og:image:width" content="1200" />
-  <meta property="og:image:height" content="630" />
-  <meta property="og:image:alt"
-    content="A banner image showcasing the innovative services and creative solutions offered by Sora Design Studio" />
-  
-    <!-- pinterest verification  -->
-  <meta name="p:domain_verify" content="01f2e411bac7cde6bb1ca0b16c1c2a65"/>
+  <title>soradesignstudio</title>
 </head>
 
 <body>
   <div id="root"></div>
+
   <!-- Tidio Chat Widget -->
-  <script src="//code.tidio.co/2ktkxnod1zvxugsmujjc9ztnbadu2ngf.js" async></script>
+  <!-- <script src="//code.tidio.co/2ktkxnod1zvxugsmujjc9ztnbadu2ngf.js" async></script> -->
+
+  <!-- Vite entry point -->
   <script type="module" src="/src/main.jsx"></script>
 </body>
 
