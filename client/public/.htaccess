@@ -1,13 +1,17 @@
 <IfModule mod_rewrite.c>
   RewriteEngine On
   RewriteBase /
-  # Allow direct access to existing files and directories
+
+  # --- Force HTTPS and remove "www" ---
+  RewriteCond %{HTTPS} !=on [OR]
+  RewriteCond %{HTTP_HOST} ^www\.soradesignstudio\.com [NC]
+  RewriteRule ^(.*)$ https://soradesignstudio.com/$1 [L,R=301]
+
+  # --- Allow direct access to existing files and directories ---
   RewriteCond %{REQUEST_FILENAME} -f [OR]
   RewriteCond %{REQUEST_FILENAME} -d
   RewriteRule ^ - [L]
 
-  # Single Page App fallback to index.html
+  # --- SPA fallback (React) ---
   RewriteRule . /index.html [L]
 </IfModule>
-
-
