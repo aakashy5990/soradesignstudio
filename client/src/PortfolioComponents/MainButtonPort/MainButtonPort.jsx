@@ -3,36 +3,44 @@ import './MainButtonPort.css';
 
 function MainButtonPort({ activeBox, setActiveBox }) {
 
+const navItems = [
+  { 
+    name: "Posters",
+    activeBox: "posterport"
+  },
+  { 
+    name: "Motion",
+    activeBox: "motionport"
+  },
+  { 
+    name: "CGI",
+    activeBox: "cgiport"
+  },
+  { 
+    name: "Print Ads",
+    activeBox: "stillsport"
+  },
+  { 
+    name: "Brand Guidelines",
+    activeBox: "brandguidelinesport"
+  },
+  { 
+    name: "Brochure",
+    activeBox: "brochureport"
+  }
+];
+
   return (
     <div className="main_port_container">
       <div className="port_navbar">
-        <button 
-          className={`tab-button hover-underline-animation ${activeBox === 'posterport' ? 'active' : ''}`} 
-          onClick={() => setActiveBox('posterport')}
-        >
-          Posters
-        </button>
-        <button 
-          className={`tab-button hover-underline-animation ${activeBox === 'motionport' ? 'active' : ''}`} 
-          onClick={() => setActiveBox('motionport')}
-        >
-          Motion
-        </button>
-
-        <button 
-          className={`tab-button hover-underline-animation ${activeBox === 'cgiport' ? 'active' : ''}`}
-          onClick={() => setActiveBox('cgiport')}
-        >
-          CGI
-        </button>
-                <button 
-          className={`tab-button hover-underline-animation ${activeBox === 'stillsport' ? 'active' : ''}`} 
-          onClick={() => setActiveBox('stillsport')}
-        >
-          Stills
-        </button>
-        <button className={`tab-button hover-underline-animation ${activeBox === 'brandguidelinesport' ? 'active' : ''}`} onClick={() => setActiveBox('brandguidelinesport')}>Brand Guidelines</button>
-        <button className={`tab-button hover-underline-animation ${activeBox === 'brochureport' ? 'active' : ''}`} onClick={() => setActiveBox('brochureport')}>Brochure</button>
+        {navItems.map((item, index) => (
+          <button 
+            className={`tab-button hover-underline-animation ${activeBox === item.activeBox ? 'active' : ''}`} 
+            onClick={() => setActiveBox(item.activeBox)}
+          >
+            {item.name}
+          </button>
+        ))}
       </div>
     </div>
   );

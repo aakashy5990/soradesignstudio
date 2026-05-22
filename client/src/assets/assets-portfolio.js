@@ -28,26 +28,26 @@ import upvcWindowDesigns3d from "./PortfolioImg/CGI/upvcwindow3ddesiogns.webp";
 import upvcWindowAds3ds from "./PortfolioImg/CGI/upvcwindowads3ds.webp";
 
 // Stills images imports
-import addesigns from "./PortfolioImg/Stills/addesigns.webp";
-import creativephotomanipulation from "./PortfolioImg/Stills/creativephotomanipulation.webp";
-import creativephotoshopedit from "./PortfolioImg/Stills/creativephotoshopedit.webp";
-import doctorsdaycreativedesign from "./PortfolioImg/Stills/doctorsdaycreativedesign.webp";
-import doctorsdayphotoshopedit from "./PortfolioImg/Stills/doctorsdayphotoshopedit.webp";
-import freepikEnhance85525 from "./PortfolioImg/Stills/freepik__enhance__85525.jpeg";
-import ganeshaphotoedit from "./PortfolioImg/Stills/ganeshaphotoedit.webp";
-import ikeaaddesigns from "./PortfolioImg/Stills/ikeaaddesigns.webp";
-import KFCaddesigns from "./PortfolioImg/Stills/KFCaddesigns.webp";
-import krishnajanmashtmidesign from "./PortfolioImg/Stills/krishnajanmashtmidesign.webp";
-import malariadayphotoshopedit from "./PortfolioImg/Stills/malariadayphotoshopedit.webp";
-import mcdonaladsdesigns from "./PortfolioImg/Stills/mcdonaladsdesigns.webp";
-import netflixaddesigns from "./PortfolioImg/Stills/netflixaddesigns.webp";
-import photoshopdesigndurex from "./PortfolioImg/Stills/photoshopdesigndurex.webp";
-import photoshopedits from "./PortfolioImg/Stills/photoshopedits.webp";
-import redbullsleepdaydesign from "./PortfolioImg/Stills/redbullsleepdaydesign.webp";
-import uniquedesigns from "./PortfolioImg/Stills/uniquedesigns.webp";
-import upvcdoorcreativedesigns from "./PortfolioImg/Stills/upvcdoorcreativedesigns.webp";
-import upvcwindowcreativeads from "./PortfolioImg/Stills/upvcwindowcreativeads.webp";
-import worldmalariaphotoshop from "./PortfolioImg/Stills/worldmalariaphotoshop.webp";
+// import addesigns from "./PortfolioImg/Stills/addesigns.webp";
+// import creativephotomanipulation from "./PortfolioImg/Stills/creativephotomanipulation.webp";
+// import creativephotoshopedit from "./PortfolioImg/Stills/creativephotoshopedit.webp";
+// import doctorsdaycreativedesign from "./PortfolioImg/Stills/doctorsdaycreativedesign.webp";
+// import doctorsdayphotoshopedit from "./PortfolioImg/Stills/doctorsdayphotoshopedit.webp";
+// import freepikEnhance85525 from "./PortfolioImg/Stills/freepik__enhance__85525.jpeg";
+// import ganeshaphotoedit from "./PortfolioImg/Stills/ganeshaphotoedit.webp";
+// import ikeaaddesigns from "./PortfolioImg/Stills/ikeaaddesigns.webp";
+// import KFCaddesigns from "./PortfolioImg/Stills/KFCaddesigns.webp";
+// import krishnajanmashtmidesign from "./PortfolioImg/Stills/krishnajanmashtmidesign.webp";
+// import malariadayphotoshopedit from "./PortfolioImg/Stills/malariadayphotoshopedit.webp";
+// import mcdonaladsdesigns from "./PortfolioImg/Stills/mcdonaladsdesigns.webp";
+// import netflixaddesigns from "./PortfolioImg/Stills/netflixaddesigns.webp";
+// import photoshopdesigndurex from "./PortfolioImg/Stills/photoshopdesigndurex.webp";
+// import photoshopedits from "./PortfolioImg/Stills/photoshopedits.webp";
+// import redbullsleepdaydesign from "./PortfolioImg/Stills/redbullsleepdaydesign.webp";
+// import uniquedesigns from "./PortfolioImg/Stills/uniquedesigns.webp";
+// import upvcdoorcreativedesigns from "./PortfolioImg/Stills/upvcdoorcreativedesigns.webp";
+// import upvcwindowcreativeads from "./PortfolioImg/Stills/upvcwindowcreativeads.webp";
+// import worldmalariaphotoshop from "./PortfolioImg/Stills/worldmalariaphotoshop.webp";
 
 // Brand Guidelines images imports
 import cv01 from "./PortfolioImg/brandguidelines/CV-01.webp";
@@ -112,28 +112,28 @@ export const CGIPortData = [
     upvcWindowAds3ds,
 ]
 
-export const StillsPortData = [
-    addesigns,
-    creativephotomanipulation,
-    creativephotoshopedit,
-    doctorsdaycreativedesign,
-    doctorsdayphotoshopedit,
-    freepikEnhance85525,
-    ganeshaphotoedit,
-    ikeaaddesigns,
-    KFCaddesigns,
-    krishnajanmashtmidesign,
-    malariadayphotoshopedit,
-    mcdonaladsdesigns,
-    netflixaddesigns,
-    photoshopdesigndurex,
-    photoshopedits,
-    redbullsleepdaydesign,
-    uniquedesigns,
-    upvcdoorcreativedesigns,
-    upvcwindowcreativeads,
-    worldmalariaphotoshop,
-]
+// export const StillsPortData = [
+//     addesigns,
+//     creativephotomanipulation,
+//     creativephotoshopedit,
+//     doctorsdaycreativedesign,
+//     doctorsdayphotoshopedit,
+//     freepikEnhance85525,
+//     ganeshaphotoedit,
+//     ikeaaddesigns,
+//     KFCaddesigns,
+//     krishnajanmashtmidesign,
+//     malariadayphotoshopedit,
+//     mcdonaladsdesigns,
+//     netflixaddesigns,
+//     photoshopdesigndurex,
+//     photoshopedits,
+//     redbullsleepdaydesign,
+//     uniquedesigns,
+//     upvcdoorcreativedesigns,
+//     upvcwindowcreativeads,
+//     worldmalariaphotoshop,
+// ]
 
 export const BrandGuidelinesPortData = [
     cv01,
