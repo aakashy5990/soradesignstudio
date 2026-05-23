@@ -1,30 +1,34 @@
 .printmain {
   width: 100%;
-  max-width: 1200px;
   margin: 0 auto;
   padding: 20px;
 }
 
 .printGallery {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 18px;
-  grid-auto-rows: 250px;
-  grid-auto-flow: dense;
+  column-count: 3;
+  column-gap: 5px;
 }
 
 .printItem {
+  appearance: none;
+  border: 0;
+  display: inline-block;
+  width: 100%;
+  margin: 0 0 5px;
+  padding: 0;
   overflow: hidden;
-  border-radius: 18px;
+  border-radius: 0;
   background: #f0f0f0;
+  cursor: zoom-in;
+  line-height: 0;
   position: relative;
-  aspect-ratio: auto;
+  break-inside: avoid;
+  page-break-inside: avoid;
 }
 
 .printItem img {
   width: 100%;
-  height: 100%;
-  object-fit: cover;
+  height: auto;
   display: block;
   transition: transform 0.3s ease;
 }
@@ -33,50 +37,81 @@
   transform: scale(1.05);
 }
 
-/* 3000x4000 - Tall portrait */
-.printTall {
-  grid-row: span 2;
-  grid-column: span 1;
+.stillsLightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  background: rgba(0, 0, 0, 0.88);
+  cursor: zoom-out;
 }
 
-/* 3000x3000 - Square */
-.printSquare {
-  grid-row: span 1;
-  grid-column: span 1;
+.stillsLightboxImage {
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  cursor: default;
+}
+
+.stillsLightboxClose {
+  position: fixed;
+  top: 18px;
+  right: 18px;
+  z-index: 10000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border: 0;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.92);
+  color: #111;
+  cursor: pointer;
+  font-size: 28px;
+  line-height: 44px;
+  padding: 0;
 }
 
 @media (max-width: 768px) {
   .printGallery {
-    grid-template-columns: repeat(2, 1fr);
-    grid-auto-rows: 200px;
-    gap: 14px;
+    column-count: 2;
+    column-gap: 5px;
   }
 
-  .printTall {
-    grid-row: span 2;
+  .printItem {
+    margin-bottom: 5px;
   }
 
-  .printSquare {
-    grid-row: span 1;
+  .stillsLightbox {
+    padding: 12px;
+  }
+
+  .stillsLightboxClose {
+    top: 12px;
+    right: 12px;
+    width: 40px;
+    height: 40px;
+    font-size: 28px;
   }
 }
 
 @media (max-width: 500px) {
-  main {
+  .printmain {
     padding: 10px;
   }
 
   .printGallery {
-    grid-template-columns: 1fr;
-    grid-auto-rows: 200px;
-    gap: 12px;
+    column-count: 1;
+    column-gap: 5px;
   }
 
-  .printTall {
-    grid-row: span 1;
-  }
-
-  .printSquare {
-    grid-row: span 1;
+  .printItem {
+    margin-bottom: 5px;
   }
 }

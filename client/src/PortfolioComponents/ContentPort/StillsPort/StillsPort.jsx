@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import './StillsPort.css'
 import printwindow from '../../../assets/PortfolioImg/Stills/printWindow.png'
 import printSpider from '../../../assets/PortfolioImg/Stills/printSpider.png'
@@ -38,6 +38,51 @@ import printMedicine from '../../../assets/PortfolioImg/Stills/printMedicine.png
 
 
 function StillsPort({ activeBox }) {
+  const [selectedImage, setSelectedImage] = useState(null);
+
+  const stillImages = [
+    printwindow,
+    printSpider,
+    printEarth,
+    savebeesprintad,
+    upvcprintad,
+    savebeesprintad3,
+    savebeesprintad2,
+    printUpvc,
+    printBurnEarth,
+    walnuttrackspace,
+    printSleep,
+    proproductad,
+    janmashtmi,
+    adcreativedurex,
+    diabetesadprint,
+    healthprintad,
+    coimbatoreaddesign,
+    doctorsprintads,
+    medicineeffectprintad,
+    metallicgrey3trackspace,
+    printBull,
+    printBurger,
+    printGanesh,
+    printMedicine,
+  ];
+
+  useEffect(() => {
+    if (!selectedImage) return undefined;
+
+    const handleKeyDown = (event) => {
+      if (event.key === "Escape") {
+        setSelectedImage(null);
+      }
+    };
+
+    window.addEventListener("keydown", handleKeyDown);
+
+    return () => {
+      window.removeEventListener("keydown", handleKeyDown);
+    };
+  }, [selectedImage]);
+
   return (
     <div
       id="stills"
@@ -61,129 +106,42 @@ function StillsPort({ activeBox }) {
       
       <div className="printmain">
         <div className="printGallery">
-          <div className="printItem printTall">
-            <img src={printwindow} alt="" />
-          </div>
-
-          <div className="printItem printSquare">
-            <img src={printSpider} alt="" />
-          </div>
-
-          <div className="printItem printTall">
-            <img src={printEarth} alt="" />
-          </div>
-
-          <div className="printItem printSquare">
-            <img src={savebeesprintad} alt="" />
-          </div>
-        
+          {stillImages.map((image, index) => (
+            <button
+              className="printItem"
+              key={`${image}-${index}`}
+              onClick={() => setSelectedImage(image)}
+              type="button"
+            >
+              <img src={image} alt="" loading="lazy" />
+            </button>
+          ))}
         </div>
       </div>
 
-      <div className="printmain">
-        <div className="printGallery">
-          <div className="printItem printTall">
-            <img src={upvcprintad} alt="" />
-          </div>
-
-          <div className="printItem printSquare">
-            <img src={savebeesprintad3} alt="" />
-          </div>
-
-          <div className="printItem printTall">
-            <img src={savebeesprintad2} alt="" />
-          </div>
-
-          <div className="printItem printSquare">
-            <img src={printUpvc} alt="" />
-          </div>
-        
+      {selectedImage && (
+        <div
+          className="stillsLightbox"
+          onClick={() => setSelectedImage(null)}
+          role="dialog"
+          aria-modal="true"
+        >
+          <button
+            className="stillsLightboxClose"
+            onClick={() => setSelectedImage(null)}
+            type="button"
+            aria-label="Close image preview"
+          >
+            &times;
+          </button>
+          <img
+            className="stillsLightboxImage"
+            src={selectedImage}
+            alt=""
+            onClick={(event) => event.stopPropagation()}
+          />
         </div>
-      </div>
-
-      <div className="printmain">
-        <div className="printGallery">
-          <div className="printItem printTall">
-            <img src={printBurnEarth} alt="" />
-          </div>
-
-          <div className="printItem printSquare">
-            <img src={walnuttrackspace} alt="" />
-          </div>
-
-          <div className="printItem printTall">
-            <img src={printSleep} alt="" />
-          </div>
-
-          <div className="printItem printSquare">
-            <img src={proproductad} alt="" />
-          </div>
-        
-        </div>
-      </div>
-
-      <div className="printmain">
-        <div className="printGallery">
-          <div className="printItem printTall">
-            <img src={janmashtmi} alt="" />
-          </div>
-
-          <div className="printItem printSquare">
-            <img src={adcreativedurex} alt="" />
-          </div>
-
-          <div className="printItem printTall">
-            <img src={diabetesadprint} alt="" />
-          </div>
-
-          <div className="printItem printSquare">
-            <img src={healthprintad} alt="" />
-          </div>
-        
-        </div>
-      </div>
-
-      <div className="printmain">
-        <div className="printGallery">
-          <div className="printItem printTall">
-            <img src={coimbatoreaddesign} alt="" />
-          </div>
-
-          <div className="printItem printSquare">
-            <img src={doctorsprintads} alt="" />
-          </div>
-
-          <div className="printItem printTall">
-            <img src={medicineeffectprintad} alt="" />
-          </div>
-
-          <div className="printItem printSquare">
-            <img src={metallicgrey3trackspace} alt="" />
-          </div>
-        
-        </div>
-      </div>
-
-      <div className="printmain">
-        <div className="printGallery">
-          <div className="printItem printTall">
-            <img src={printBull} alt="" />
-          </div>
-
-          <div className="printItem printSquare">
-            <img src={printBurger} alt="" />
-          </div>
-
-          <div className="printItem printTall">
-            <img src={printGanesh} alt="" />
-          </div>
-
-          <div className="printItem printSquare">
-            <img src={printMedicine} alt="" />
-          </div>
-        
-        </div>
-      </div>
+      )}
 
     </div>
   );
