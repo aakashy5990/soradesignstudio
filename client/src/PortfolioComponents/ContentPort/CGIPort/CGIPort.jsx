@@ -1,7 +1,28 @@
-import React from "react";
+import React, { useEffect, useMemo, useState } from "react";
+import "./CGIPort.css";
 import { CGIPortData } from "../../../assets/assets-portfolio";
 
 function CGIPort({activeBox}) {
+  const [selectedImage, setSelectedImage] = useState(null);
+  const randomCGIPortData = useMemo(() => {
+    return [...CGIPortData].sort(() => Math.random() - 0.5);
+  }, []);
+
+  useEffect(() => {
+    if (!selectedImage) return undefined;
+
+    const handleKeyDown = (event) => {
+      if (event.key === "Escape") {
+        setSelectedImage(null);
+      }
+    };
+
+    window.addEventListener("keydown", handleKeyDown);
+
+    return () => {
+      window.removeEventListener("keydown", handleKeyDown);
+    };
+  }, [selectedImage]);
 
   return (
     <div id="cgi" className={`tab-content ${activeBox === 'cgiport' ? 'activeport' : ''}`}>
@@ -19,11 +40,44 @@ function CGIPort({activeBox}) {
           </p>
         </div>
       </div>
-      <main>
-        {CGIPortData.map((item,index) => (
-          <img key={index} src={item} loading="lazy" />
-        ))}
-      </main>
+      <div className="cgiMain">
+        <div className="cgiGallery">
+          {randomCGIPortData.map((item,index) => (
+            <button
+              className="cgiItem"
+              key={`${item}-${index}`}
+              onClick={() => setSelectedImage(item)}
+              type="button"
+            >
+              <img src={item} alt="" loading="lazy" />
+            </button>
+          ))}
+        </div>
+      </div>
+
+      {selectedImage && (
+        <div
+          className="cgiLightbox"
+          onClick={() => setSelectedImage(null)}
+          role="dialog"
+          aria-modal="true"
+        >
+          <button
+            className="cgiLightboxClose"
+            onClick={() => setSelectedImage(null)}
+            type="button"
+            aria-label="Close image preview"
+          >
+            &times;
+          </button>
+          <img
+            className="cgiLightboxImage"
+            src={selectedImage}
+            alt=""
+            onClick={(event) => event.stopPropagation()}
+          />
+        </div>
+      )}
     </div>
   );
 }

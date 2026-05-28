@@ -17,37 +17,37 @@ import posterdesigns from "./PortfolioImg/posters/posterdesigns.webp";
 import cgi1 from "./PortfolioImg/CGI/1.png";
 import cgi2 from "./PortfolioImg/CGI/2.png";
 import cgi4 from "./PortfolioImg/CGI/4.png";
+import banner3d from "./PortfolioImg/CGI/3dbanner.jpg";
+import bottleRender3d from "./PortfolioImg/CGI/3dbottlerender.png";
+import boxRenders3d from "./PortfolioImg/CGI/3dboxrenders.png";
 import designAds3d from "./PortfolioImg/CGI/3ddesignads.webp";
+import jarModeling3d from "./PortfolioImg/CGI/3djarmodeling.png";
 import whiskyModel from "./PortfolioImg/CGI/3dmodellingwhisky.webp";
 import jewelryDesign3d from "./PortfolioImg/CGI/3djewelrydesign.webp";
 import jewelryDesigns3d from "./PortfolioImg/CGI/3djewelrydesigns.webp";
-import modeling3d from "./PortfolioImg/CGI/3dmodeling.webp";
+import mironHand3d from "./PortfolioImg/CGI/3dmironhand.png";
+// import modeling3d from "./PortfolioImg/CGI/3dmodeling.webp";
 import perfumeDesign3d from "./PortfolioImg/CGI/3dperfumedesign.webp";
-import perfumeDesigns3d from "./PortfolioImg/CGI/perfumedesigns3d.webp";
+// import productRender3d from "./PortfolioImg/CGI/3dproductrender.png";
+import prodcutRender3d from "./PortfolioImg/CGI/3dprodcutrender.png";
+import productVisualization3d from "./PortfolioImg/CGI/3dproductvisualization.png";
+import realisticProduct3d from "./PortfolioImg/CGI/3drealisticproduct.png";
+import sachetRenders3d from "./PortfolioImg/CGI/3dsachetrenders.png";
+import cannabisWide from "./PortfolioImg/CGI/cannabiswide.png";
+// import cgiKeyshot from "./PortfolioImg/CGI/CGIkeyshot.png";
+// import doinik from "./PortfolioImg/CGI/doinik.png";
+import infuseLifestyle from "./PortfolioImg/CGI/infuselifestyle.png";
+import infuseLifestyledRender from "./PortfolioImg/CGI/infuselifestyled render.png";
+import infuserRender3d from "./PortfolioImg/CGI/Infuser3drender.png";
+import infuserStyle3d from "./PortfolioImg/CGI/infuserstyle3d.png";
+import jarRenders3d from "./PortfolioImg/CGI/jar3drenders.png";
+import jarRenderCgi from "./PortfolioImg/CGI/jarrenderCGI.jpg";
+import lemonBoxRenders from "./PortfolioImg/CGI/lemonboxrenders.png";
+// import perfumeDesigns3d from "./PortfolioImg/CGI/perfumedesigns3d.webp";
+import realisticVapeRender from "./PortfolioImg/CGI/realisticvaperender.png";
 import upvcWindowDesigns3d from "./PortfolioImg/CGI/upvcwindow3ddesiogns.webp";
 import upvcWindowAds3ds from "./PortfolioImg/CGI/upvcwindowads3ds.webp";
-
-// Stills images imports
-// import addesigns from "./PortfolioImg/Stills/addesigns.webp";
-// import creativephotomanipulation from "./PortfolioImg/Stills/creativephotomanipulation.webp";
-// import creativephotoshopedit from "./PortfolioImg/Stills/creativephotoshopedit.webp";
-// import doctorsdaycreativedesign from "./PortfolioImg/Stills/doctorsdaycreativedesign.webp";
-// import doctorsdayphotoshopedit from "./PortfolioImg/Stills/doctorsdayphotoshopedit.webp";
-// import freepikEnhance85525 from "./PortfolioImg/Stills/freepik__enhance__85525.jpeg";
-// import ganeshaphotoedit from "./PortfolioImg/Stills/ganeshaphotoedit.webp";
-// import ikeaaddesigns from "./PortfolioImg/Stills/ikeaaddesigns.webp";
-// import KFCaddesigns from "./PortfolioImg/Stills/KFCaddesigns.webp";
-// import krishnajanmashtmidesign from "./PortfolioImg/Stills/krishnajanmashtmidesign.webp";
-// import malariadayphotoshopedit from "./PortfolioImg/Stills/malariadayphotoshopedit.webp";
-// import mcdonaladsdesigns from "./PortfolioImg/Stills/mcdonaladsdesigns.webp";
-// import netflixaddesigns from "./PortfolioImg/Stills/netflixaddesigns.webp";
-// import photoshopdesigndurex from "./PortfolioImg/Stills/photoshopdesigndurex.webp";
-// import photoshopedits from "./PortfolioImg/Stills/photoshopedits.webp";
-// import redbullsleepdaydesign from "./PortfolioImg/Stills/redbullsleepdaydesign.webp";
-// import uniquedesigns from "./PortfolioImg/Stills/uniquedesigns.webp";
-// import upvcdoorcreativedesigns from "./PortfolioImg/Stills/upvcdoorcreativedesigns.webp";
-// import upvcwindowcreativeads from "./PortfolioImg/Stills/upvcwindowcreativeads.webp";
-// import worldmalariaphotoshop from "./PortfolioImg/Stills/worldmalariaphotoshop.webp";
+import wideRenderShot from "./PortfolioImg/CGI/widerendershot.png";
 
 // Brand Guidelines images imports
 import cv01 from "./PortfolioImg/brandguidelines/CV-01.webp";
@@ -98,6 +98,28 @@ export const PostersPortData = [
 ]
 
 export const CGIPortData = [
+    banner3d,
+    bottleRender3d,
+    boxRenders3d,
+    jarModeling3d,
+    mironHand3d,
+    // productRender3d,
+    prodcutRender3d,
+    productVisualization3d,
+    realisticProduct3d,
+    sachetRenders3d,
+    cannabisWide,
+    // cgiKeyshot,
+    // doinik,
+    infuseLifestyle,
+    infuseLifestyledRender,
+    infuserRender3d,
+    infuserStyle3d,
+    jarRenders3d,
+    jarRenderCgi,
+    lemonBoxRenders,
+    realisticVapeRender,
+    wideRenderShot,
     cgi1,
     cgi2,
     cgi4,
@@ -105,35 +127,12 @@ export const CGIPortData = [
     whiskyModel,
     jewelryDesign3d,
     jewelryDesigns3d,
-    modeling3d,
+    // modeling3d,
     perfumeDesign3d,
-    perfumeDesigns3d,
+    // perfumeDesigns3d,
     upvcWindowDesigns3d,
     upvcWindowAds3ds,
 ]
-
-// export const StillsPortData = [
-//     addesigns,
-//     creativephotomanipulation,
-//     creativephotoshopedit,
-//     doctorsdaycreativedesign,
-//     doctorsdayphotoshopedit,
-//     freepikEnhance85525,
-//     ganeshaphotoedit,
-//     ikeaaddesigns,
-//     KFCaddesigns,
-//     krishnajanmashtmidesign,
-//     malariadayphotoshopedit,
-//     mcdonaladsdesigns,
-//     netflixaddesigns,
-//     photoshopdesigndurex,
-//     photoshopedits,
-//     redbullsleepdaydesign,
-//     uniquedesigns,
-//     upvcdoorcreativedesigns,
-//     upvcwindowcreativeads,
-//     worldmalariaphotoshop,
-// ]
 
 export const BrandGuidelinesPortData = [
     cv01,

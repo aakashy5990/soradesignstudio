@@ -1,8 +1,25 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./PostersPort.css";
 import { PostersPortData } from "../../../assets/assets-portfolio";
 
 function PostersPort({activeBox}) {
+  const [selectedImage, setSelectedImage] = useState(null);
+
+  useEffect(() => {
+    if (!selectedImage) return undefined;
+
+    const handleKeyDown = (event) => {
+      if (event.key === "Escape") {
+        setSelectedImage(null);
+      }
+    };
+
+    window.addEventListener("keydown", handleKeyDown);
+
+    return () => {
+      window.removeEventListener("keydown", handleKeyDown);
+    };
+  }, [selectedImage]);
 
   return (
     <div className={`tab-content ${activeBox === 'posterport' ? 'activeport':''}`}>
@@ -26,11 +43,42 @@ function PostersPort({activeBox}) {
           </p>
         </div>
       </div>
-      <main>
+      <div className="posterMasonry">
         {PostersPortData.map((item,index)=>(
-          <img key={index} src={item} alt={item} loading="lazy" />
+          <button
+            className="posterMasonryItem"
+            key={index}
+            onClick={() => setSelectedImage(item)}
+            type="button"
+          >
+            <img src={item} alt="" loading="lazy" />
+          </button>
         ))}
-      </main>
+      </div>
+
+      {selectedImage && (
+        <div
+          className="posterLightbox"
+          onClick={() => setSelectedImage(null)}
+          role="dialog"
+          aria-modal="true"
+        >
+          <button
+            className="posterLightboxClose"
+            onClick={() => setSelectedImage(null)}
+            type="button"
+            aria-label="Close image preview"
+          >
+            &times;
+          </button>
+          <img
+            className="posterLightboxImage"
+            src={selectedImage}
+            alt=""
+            onClick={(event) => event.stopPropagation()}
+          />
+        </div>
+      )}
     </div>
   );
 }
