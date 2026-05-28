@@ -26,16 +26,12 @@ import whiskyModel from "./PortfolioImg/CGI/3dmodellingwhisky.webp";
 import jewelryDesign3d from "./PortfolioImg/CGI/3djewelrydesign.webp";
 import jewelryDesigns3d from "./PortfolioImg/CGI/3djewelrydesigns.webp";
 import mironHand3d from "./PortfolioImg/CGI/3dmironhand.png";
-// import modeling3d from "./PortfolioImg/CGI/3dmodeling.webp";
 import perfumeDesign3d from "./PortfolioImg/CGI/3dperfumedesign.webp";
-// import productRender3d from "./PortfolioImg/CGI/3dproductrender.png";
 import prodcutRender3d from "./PortfolioImg/CGI/3dprodcutrender.png";
 import productVisualization3d from "./PortfolioImg/CGI/3dproductvisualization.png";
 import realisticProduct3d from "./PortfolioImg/CGI/3drealisticproduct.png";
 import sachetRenders3d from "./PortfolioImg/CGI/3dsachetrenders.png";
 import cannabisWide from "./PortfolioImg/CGI/cannabiswide.png";
-// import cgiKeyshot from "./PortfolioImg/CGI/CGIkeyshot.png";
-// import doinik from "./PortfolioImg/CGI/doinik.png";
 import infuseLifestyle from "./PortfolioImg/CGI/infuselifestyle.png";
 import infuseLifestyledRender from "./PortfolioImg/CGI/infuselifestyled render.png";
 import infuserRender3d from "./PortfolioImg/CGI/Infuser3drender.png";
@@ -43,7 +39,6 @@ import infuserStyle3d from "./PortfolioImg/CGI/infuserstyle3d.png";
 import jarRenders3d from "./PortfolioImg/CGI/jar3drenders.png";
 import jarRenderCgi from "./PortfolioImg/CGI/jarrenderCGI.jpg";
 import lemonBoxRenders from "./PortfolioImg/CGI/lemonboxrenders.png";
-// import perfumeDesigns3d from "./PortfolioImg/CGI/perfumedesigns3d.webp";
 import realisticVapeRender from "./PortfolioImg/CGI/realisticvaperender.png";
 import upvcWindowDesigns3d from "./PortfolioImg/CGI/upvcwindow3ddesiogns.webp";
 import upvcWindowAds3ds from "./PortfolioImg/CGI/upvcwindowads3ds.webp";
@@ -103,14 +98,11 @@ export const CGIPortData = [
     boxRenders3d,
     jarModeling3d,
     mironHand3d,
-    // productRender3d,
     prodcutRender3d,
     productVisualization3d,
     realisticProduct3d,
     sachetRenders3d,
     cannabisWide,
-    // cgiKeyshot,
-    // doinik,
     infuseLifestyle,
     infuseLifestyledRender,
     infuserRender3d,
@@ -127,9 +119,7 @@ export const CGIPortData = [
     whiskyModel,
     jewelryDesign3d,
     jewelryDesigns3d,
-    // modeling3d,
     perfumeDesign3d,
-    // perfumeDesigns3d,
     upvcWindowDesigns3d,
     upvcWindowAds3ds,
 ]
