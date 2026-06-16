@@ -4,7 +4,7 @@ import cors from 'cors'
 import connectDB from './config/ḍb.js'
 import adminRouter from './routes/adminRoutes.js';
 import auth from './middleware/auth.js';
-
+import PerformanceRouter from './routes/performanceRoutes.js';
 const app = express();
 
 // Connect MongoDB;
@@ -36,7 +36,7 @@ app.get('/', (req, res) => {
     res.send("Server is Running");
 })
 app.use('/admin', adminRouter);
-
+app.use('/performance', PerformanceRouter);
 // Optional: health for admin area
 app.get('/admin/health', (req, res) => {
   res.json({ success: true });
